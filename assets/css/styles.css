@@ -17,3 +17,6 @@ p {
 .carousel-item img {
   height: 300px;
 }
+#map {
+  height: 40px;
+}
