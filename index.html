@@ -1,223 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<!-- [START maps_add_map] -->
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Map</title>
 
-    <!-- Bootstrap links -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <title>UK road trips</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+    <script type="module" src="./assets/js/index.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Home</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Recommended Locations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Route planner</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <h1>UK road trips</h1>
-    <p>
-      Welcome to UK road trips, here you can plan your road trip around the UK
-    </p>
-    <div
-      id="carouselExampleAutoplaying"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="/assets/images/bamburgh-castle-730x385.jpg"
-            class="d-block w-100"
-            alt="stonehenge"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="/assets/images/edinburgh-zoo-map.png"
-            class="d-block w-100"
-            alt="uk beach"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="/assets/images/alnwick-gardens.webp"
-            class="d-block w-100"
-            alt="uk country side"
-          />
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <div class="container mt-3">
-      <div class="row">
-        <p class="col-6">
-          The Uk has over 1000 years of history, with a wide variety of places
-          to visit.
-        </p>
-        <!-- <iframe
-          class="col-6"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2987658.0249113576!2d-4.078718670231942!3d54.520652927150266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1758548321843!5m2!1sen!2suk"
-          width="50%"
-          height="500"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe> -->
-        <!-- <iframe
-          class="map-top"
-          width="598"
-          height="450"
-          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBzaDXE_CFHiVY5BYuoEZbJ6ZZVYRj7vnc
-    &origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways"
-          allowfullscreen
-        ></iframe> -->
-        <div id="map"></div>
-      </div>
-      <div class="row p-4">
-        <img
-          src="assets/images/bamburgh-castle-730x385.jpg"
-          alt="stonehenge"
-          class="col-6"
-        />
-        <div class="col-6">
-          <h2>Bamburgh castle</h2>
-          <p>
-            This castle has a history of over 1,400 years, and is one of the
-            largest inhabited castles in the country. In 1894 The castle as
-            bought by William George Armstrong to house his unique collection of
-            artwork, ceramic and objet d'art.
-          </p>
-        </div>
-      </div>
-      <div class="row p-4">
-        <div class="col-6">
-          <h2>Edinburgh Zoo</h2>
-          <p>
-            Home to the Royal Zoological Society of Scotland (RZSS), they are a
-            wildlife conservation charity. Edinburgh Zoo was opened in 1913 by
-            Thomas Gillespie, a lawyer that founded the RZSS in 1909
-          </p>
-        </div>
+    <!-- [START maps_add_map_heading] -->
+    <h3>My Google Maps Demo</h3>
+    <!-- [END maps_add_map_heading] -->
+    <!-- [START maps_add_map_div] -->
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <!-- [END maps_add_map_div] -->
 
-        <img
-          src="assets/images/edinburgh-zoo-map.png"
-          alt="uk beach"
-          class="col-6"
-        />
-      </div>
-      <div class="row p-4">
-        <img
-          src="assets/images/alnwick-gardens.webp"
-          alt="uk country side"
-          class="col-6"
-        />
-        <div class="col-6">
-          <h2>Alnwick gardens</h2>
-          <p>
-            The first garden was created by the 1st duke of Northumberland Hugh
-            Percy and then further developed by future dukes. The garden has
-            plants from all over the world, in a closed off section, there is
-            the poison garden with some of the most deadly plants from all over
-            the world.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Google Maps js -->
     <!-- prettier-ignore -->
-    <script>
-      ((g) => {
-        var h,
-          a,
-          k,
-          p = "The Google Maps JavaScript API",
-          c = "google",
-          l = "importLibrary",
-          q = "__ib__",
-          m = document,
-          b = window;
-        b = b[c] || (b[c] = {});
-        var d = b.maps || (b.maps = {}),
-          r = new Set(),
-          e = new URLSearchParams(),
-          u = () =>
-            h ||
-            (h = new Promise(async (f, n) => {
-              await (a = m.createElement("script"));
-              e.set("libraries", [...r] + "");
-              for (k in g)
-                e.set(
-                  k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
-                  g[k]
-                );
-              e.set("callback", c + ".maps." + q);
-              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-              d[q] = f;
-              a.onerror = () => (h = n(Error(p + " could not load.")));
-              a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-              m.head.append(a);
-            }));
-        d[l]
-          ? console.warn(p + " only loads once. Ignoring:", g)
-          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-      })({ key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly" });
-    </script>
-    <!-- Bootstrap js -->
+    <!-- <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyBzaDXE_CFHiVY5BYuoEZbJ6ZZVYRj7vnc", v: "weekly"});</script> -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzaDXE_CFHiVY5BYuoEZbJ6ZZVYRj7vnc&callback=initMap&v=weekly"
+      defer
     ></script>
-    <!-- link to JavaScript page -->
-    <script type="module" src="assets/js/script.js"></script>
   </body>
 </html>
+<!-- [END maps_add_map] -->

@@ -67,19 +67,19 @@ const API_KEY = "AIzaSyBzaDXE_CFHiVY5BYuoEZbJ6ZZVYRj7vnc";
 
 // initMap();
 
-import {loader} from "@googlemaps/js-api-loader"
+// import {loader} from "@googlemaps/js-api-loader"
 
-const loader = new Loader({
-  apiKey: API_KEY,
-  version: "weekly",
-  ...additionalOptions,
-});
+// const loader = new Loader({
+//   apiKey: API_KEY,
+//   version: "weekly",
+//   ...additionalOptions,
+// });
 
-loader
-  .importLibrary("maps")
-  .then(({ Map }) => {
-    new Map(document.getElementById("map"), mapOptions);
-  })
-  .catch((e) => {
-    // do something
-  });
+// loader
+//   .importLibrary("maps")
+//   .then(({ Map }) => {
+//     new Map(document.getElementById("map"), mapOptions);
+//   })
+//   .catch((e) => {
+//     // do something
+//   });
