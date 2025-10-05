@@ -19,106 +19,71 @@
     <script type="module" src="./assets/js/index.js"></script>
   </head>
   <body>
-   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">UK Road trips</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Recommended Locations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Route planner</a>
-            </li>
-          </ul>
+    <div class="wrapper">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">UK Road trips</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Recommended Locations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Route planner</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <h1>UK road trips</h1>
+      <p>
+        Welcome to UK road trips, here you can plan your road trip around the UK
+      </p>
+      <div>
+        <img
+          src="assets/images/uk-country-side.webp"
+          class="d-block w-100"
+          alt="stonehenge"
+        />
+      </div>
+      <div class="container mt-3">
+        <div class="row">
+          <p class="col-6">
+            The Uk has over 1000 years of history, with a wide variety of places
+            to visit.
+          </p>
         </div>
       </div>
-    </nav>
-    <h1>UK road trips</h1>
-    <p>
-      Welcome to UK road trips, here you can plan your road trip around the UK
-    </p>
-    <div
-      id="carouselExampleAutoplaying"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="assets/images/uk-country-side.webp"
-            class="d-block w-100"
-            alt="stonehenge"
-          />
+      <!--The div element for the map -->
+      <div>
+        <div id="text-input-card">
+          <input type="text" id="text-input" placeholder="Search for a place" />
+          <input type="button" id="text-input-button" value="Search" />
         </div>
-        <div class="carousel-item">
-          <img
-            src="assets/images//uk-beach.avif"
-            class="d-block w-100"
-            alt="uk beach"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="assets/images/stonehenge.jpg"
-            class="d-block w-100"
-            alt="uk country side"
-          />
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <div class="container mt-3">
-      <div class="row">
-        <p class="col-6">
-          The Uk has over 1000 years of history, with a wide variety of places
-          to visit.
-        </p>
-      </div>
-    </div>
-    <!--The div element for the map -->
-    <div>
-    <div id="text-input-card">
-      <input type="text" id="text-input" placeholder="Search for a place"></input>
-      <input type="button" id="text-input-button" value="Search"></input>
-    </div>
-    
-    <div id="map"></div>
-    <!-- [END maps_add_map_div] -->
-    </div>
 
-      <div class="row p-4">
+        <div id="map"></div>
+        <!-- [END maps_add_map_div] -->
+      </div>
+
+      <div>
+        <table id="locations"></table>
+      </div>
+
+      <div class="row pt-4">
         <img
           src="assets/images/bamburgh-castle-730x385.jpg"
           alt="stonehenge"
@@ -134,7 +99,7 @@
           </p>
         </div>
       </div>
-      <div class="row p-4">
+      <div class="row pt-4">
         <div class="col-6">
           <h2>Edinburgh Zoo</h2>
           <p>
@@ -150,7 +115,7 @@
           class="col-6 rounded"
         />
       </div>
-      <div class="row p-4">
+      <div class="row pt-4">
         <img
           src="assets/images/alnwick-gardens.webp"
           alt="uk country side"
@@ -167,16 +132,16 @@
           </p>
         </div>
       </div>
-      
-    <!-- Bootstrap js -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <!-- prettier-ignore -->
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+
+      <!-- Bootstrap js -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"
+      ></script>
+      <!-- prettier-ignore -->
+      <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
         ({key: "AIzaSyBzaDXE_CFHiVY5BYuoEZbJ6ZZVYRj7vnc", v: "weekly"});</script>
+    </div>
   </body>
 </html>
-<!-- [END maps_add_map] -->

@@ -1,7 +1,14 @@
 /* general CSS */
 body {
-  background-color: #434a42;
+  background-color: white;
   color: white;
+}
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #434a42;
+  padding: 1rem;
 }
 h1 {
   padding-top: 2rem;
@@ -19,8 +26,9 @@ p {
 }
 
 #map {
-  height: 500px;
-  width: 80%;
+  height: auto;
+  min-height: 500px;
+  width: 100%;
   padding: 0%, 10%;
 }
 
