@@ -25,7 +25,7 @@ Testing
 
 Technologies Used
 
-Credits and References
+[Credits and References](#credits-and-references) -[images](#images) -[code](#code)
 
 ## User Experience UX
 
@@ -38,6 +38,20 @@ The colours that i have chosen for this website are natural colours so they matc
 ![colour pallet](/assets/images/README-images/colour-pallet.png)
 
 ### Wireframe
+
+## Features
+
+### included Features
+
+- Map - The main page of this website contains a large map that will allow the user to search for different locations
+- destination list - using the map you will be able to click on different locations and add them to a list to be used to help plan your trip. This list will contain, the name, street and post code to allow you to use your proffered navigation app.
+- local areas - when you start your trip planning, the map will focus on your local area, this allow you to start where you currently are and then find areas nearby. after clicking on a marker, the local area will then change to that marker to allow you to find things that are local to that stop.
+
+### To be included in the future
+
+- Duration - I would like to include the duration of the trip from one location to another, so that you will know long different sections of the trip will take. It would also use this Duration to create a total time of travel during this trip.
+- add Button - At the moment clicking any of the markers will add them to the current list, however i would like to add a button that would do this so that in case you click on the wrong marker.
+- remove button - If you change your mind while planning the trip, a button to remove certain locations would allow you to remove unwanted destinations
 
 ## Credits and References
 
@@ -64,3 +78,5 @@ Google Maps API
 
 - [Load the Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/load-maps-js-api?_gl=1*xgaozz*_up*MQ..*_ga*MjExNjI4MzQzNy4xNzU5MTU1Mjc4*_ga_SM8HXJ53K2*czE3NTkxNTUyNzckbzEkZzAkdDE3NTkxNTUyNzckajYwJGwwJGgw*_ga_NRWSTWS78N*czE3NTkxNTUyNzgkbzEkZzEkdDE3NTkxNTUzMTkkajE5JGwwJGgw#javascript)
 - [Geolocation: displaying User Or Device Position on Maps](https://developers.google.com/maps/documentation/javascript/examples/map-geolocation?_gl=1*mhvji6*_up*MQ..*_ga*MTEzODQxNTEzMy4xNzU5MTYyNjYz*_ga_NRWSTWS78N*czE3NTkxNjI2NjMkbzEkZzEkdDE3NTkxNjM2NTAkajUyJGwwJGgw#maps_map_geolocation-html)
+
+Chat GPT has been used to help create the map with search and marker, however after that many additions have been added without Chat GPT

@@ -188,12 +188,19 @@ async function findPlaces(query) {
   infoWindow.close();
   const request = {
     textQuery: query,
-    fields: ["id", "displayName", "location", "businessStatus"],
+    fields: [
+      "id",
+      "displayName",
+      "formattedAddress",
+      "location",
+      "businessStatus",
+    ],
     locationBias: userPos || map.getCenter(),
     language: "en-GB",
     region: "GB",
     maxResultCount: 8,
   };
+
   // @ts-ignore
   const { places } = await Place.searchByText(request);
   if (!places || !places.length) {
@@ -217,28 +224,30 @@ async function findPlaces(query) {
       updateInfoWindow(
         place.displayName,
         `<div>Added ${place.displayName} to your trip!</div>`,
-        marker
+        marker,
+        place
       );
-      var outputHTML = "";
+      var name = "";
       //keeps deleting the outputHTML and replaces it with multiple of the last clicked area
       //https://stackoverflow.com/questions/71349510/how-to-display-javascript-variable-values-in-a-table
       location[p] = place.displayName;
       p = p + 1;
-      console.log(`location length = ${location.length}`);
-      for (let i = 0; i < location.length; i++) {
-        outputHTML += "<tr><td>" + place.displayName + "</td></tr>";
-      }
-      document.getElementById("locations").innerHTML = outputHTML;
+      name = `${place.displayName}`;
+      let street = `${place.formattedAddress}`;
+      let row = document.getElementById("locations").insertRow(-1);
+      row.insertCell(0).innerHTML = name; // use one cell for the name another for the street and last for postcode
+      row.insertCell(1).innerHTML = street;
     });
     bounds.extend(place.location);
   });
   map.fitBounds(bounds);
   if (places.length === 1) map.setZoom(Math.max(map.getZoom(), 14));
 }
-function updateInfoWindow(title, html, anchor) {
+function updateInfoWindow(title, html, anchor, place) {
   infoWindow.setHeaderContent(title);
   infoWindow.setContent(html);
   infoWindow.open({ map, anchor });
+  userPos = place.location;
 }
 function showDirections(destination) {
   if (!userPos) {
@@ -258,7 +267,7 @@ function showDirections(destination) {
       } else {
         console.error("Directions request failed:", status);
       }
-      console.log(result);
+      console.log(result.duration_in_traffic);
     }
   );
 }
