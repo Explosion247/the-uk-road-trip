@@ -1,6 +1,5 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Bitcount+Prop+Single:wght@100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 /* general CSS */
 body {
   background-color: white;
@@ -15,10 +14,10 @@ body {
 }
 h1 {
   padding-top: 2rem;
-  font-family: "Kaushan Script", cursive;
+  font-family: "Fugaz One", sans-serif;
 }
 /* h2 {
-  font-family: "Kaushan Script", cursive;
+  font-family: "Fugaz One", sans-serif;
 } */
 p {
   font-size: larger;
