@@ -20,35 +20,6 @@
   </head>
   <body>
     <div class="wrapper">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">UK Road trips</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Recommended Locations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Route planner</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
       <h1>UK road trips</h1>
       <p>
         Welcome to UK road trips, here you can plan your road trip around the UK
@@ -79,9 +50,16 @@
         <!-- [END maps_add_map_div] -->
       </div>
 
-      <div>
-        <table id="locations" class="pt-4 pb-4"></table>
+      <div class="pt-4">
+        <table id="locations">
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+          </tr>
+        </table>
       </div>
+
+      <h1>Recommended Destinations</h1>
 
       <div class="row pt-4">
         <img
@@ -90,12 +68,18 @@
           class="col-6 rounded"
         />
         <div class="col-6">
-          <h2>Bamburgh castle</h2>
+          <h2>Bamburgh Castle</h2>
           <p>
             This castle has a history of over 1,400 years, and is one of the
             largest inhabited castles in the country. In 1894 The castle as
             bought by William George Armstrong to house his unique collection of
             artwork, ceramic and objet d'art.
+          </p>
+          <br />
+          <p>
+            Banburgh Castle is in the North East of the UK just on the coast of
+            Bamburgh. The Road that leads there is the B1340 also known as Links
+            Road.
           </p>
         </div>
       </div>
@@ -105,7 +89,13 @@
           <p>
             Home to the Royal Zoological Society of Scotland (RZSS), they are a
             wildlife conservation charity. Edinburgh Zoo was opened in 1913 by
-            Thomas Gillespie, a lawyer that founded the RZSS in 1909
+            Thomas Gillespie, a lawyer that founded the RZSS in 1909.
+          </p>
+          <br />
+          <p>
+            Edinburgh is in the South East of Scotland and the Zoo is in the
+            West of Edinburgh. The Entrance to Edinburgh Zoo is along
+            Corstorphine Road.
           </p>
         </div>
 
@@ -119,16 +109,23 @@
         <img
           src="assets/images/alnwick-gardens.webp"
           alt="uk country side"
-          class="col-6 rounded-3"
+          class="col-6"
         />
         <div class="col-6">
-          <h2>Alnwick gardens</h2>
+          <h2>Alnwick Gardens</h2>
           <p>
             The first garden was created by the 1st duke of Northumberland Hugh
             Percy and then further developed by future dukes. The garden has
             plants from all over the world, in a closed off section, there is
             the poison garden with some of the most deadly plants from all over
             the world.
+          </p>
+          <br />
+          <p>
+            Alnwick Gardens is in the North East of England, and not too far
+            from Bamburgh Castle. The Garden has a different entrance to the
+            castle, however its not a long walk to the castle. The carpark is
+            located on the other end of the B1340.
           </p>
         </div>
       </div>

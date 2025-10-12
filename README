@@ -52,6 +52,8 @@ The colours that i have chosen for this website are natural colours so they matc
 - Duration - I would like to include the duration of the trip from one location to another, so that you will know long different sections of the trip will take. It would also use this Duration to create a total time of travel during this trip.
 - add Button - At the moment clicking any of the markers will add them to the current list, however i would like to add a button that would do this so that in case you click on the wrong marker.
 - remove button - If you change your mind while planning the trip, a button to remove certain locations would allow you to remove unwanted destinations
+- click - when you find a location on the map that you have not typed in, you should be able to click on the marker and have it added to the list
+- Set start point - If the user decided not to share their location, the selected location is incorrect, or the user would like to start from a different destination, a Start Point button would allow the user to select their start point allowing the user the ability to customize their journey how they like it.
 
 ## Credits and References
 

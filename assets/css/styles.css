@@ -17,13 +17,7 @@ p {
   font-size: larger;
 }
 
-/* carousel CSS */
-.carousel-item {
-  height: 300px;
-}
-.carousel-item img {
-  height: 300px;
-}
+/* Map CSS */
 
 #map {
   height: auto;
@@ -33,15 +27,13 @@ p {
   color: black;
 }
 
-/* 
- * Optional: Makes the sample page fill the window. 
- */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
 #text-input-card {
   width: 25%;
   background-color: #fff;
@@ -75,4 +67,23 @@ body {
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
   text-align: center;
+}
+/* Tables CSS */
+#locations {
+  width: auto;
+  margin: auto;
+  text-align: center;
+  color: whitesmoke;
+}
+#locations th,
+td {
+  padding: 10px;
+  border: 1px solid;
+}
+#locations th {
+  background-color: #70933d;
+}
+/* Img CSS */
+.row img {
+  border-radius: 25px;
 }
