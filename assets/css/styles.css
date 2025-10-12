@@ -1,3 +1,6 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Bitcount+Prop+Single:wght@100..900&display=swap");
+
 /* general CSS */
 body {
   background-color: white;
@@ -12,7 +15,11 @@ body {
 }
 h1 {
   padding-top: 2rem;
+  font-family: "Kaushan Script", cursive;
 }
+/* h2 {
+  font-family: "Kaushan Script", cursive;
+} */
 p {
   font-size: larger;
 }
@@ -84,6 +91,7 @@ td {
   background-color: #70933d;
 }
 /* Img CSS */
-.row img {
-  border-radius: 25px;
+.round-img {
+  border-radius: 2rem;
+  object-fit: cover;
 }
