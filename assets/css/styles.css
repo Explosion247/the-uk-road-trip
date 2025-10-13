@@ -16,9 +16,7 @@ h1 {
   padding-top: 2rem;
   font-family: "Fugaz One", sans-serif;
 }
-/* h2 {
-  font-family: "Fugaz One", sans-serif;
-} */
+
 p {
   font-size: larger;
 }
@@ -39,6 +37,7 @@ body {
   margin: 0;
   padding: 0;
 }
+/* Search Bar and Button  */
 
 #text-input-card {
   width: 25%;

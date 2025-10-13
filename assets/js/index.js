@@ -1,124 +1,5 @@
 const API_KEY = "AIzaSyBzaDXE_CFHiVY5BYuoEZbJ6ZZVYRj7vnc";
 
-// let map;
-// let infoWindow;
-// let userPos = null;
-// let markers = [];
-// // ---- init ---------------------------------------------------
-// async function initMap() {
-//   // load needed libs
-//   await google.maps.importLibrary("maps");
-//   await google.maps.importLibrary("marker");
-//   // sensible UK fallback centre
-//   const ukCentre = { lat: 54.0, lng: -2.0 };
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     zoom: 6,
-//     center: ukCentre,
-//     mapId: "DEMO_MAP_ID", // keep only if you actually have this Map ID set up
-//     gestureHandling: "greedy",
-//   });
-//   // one global infoWindow reused for all markers
-//   infoWindow = new google.maps.InfoWindow();
-//   // try geolocation so searches bias to the user
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(
-//       (pos) => {
-//         userPos = {
-//           lat: pos.coords.latitude,
-//           lng: pos.coords.longitude,
-//         };
-//         map.setCenter(userPos);
-//         infoWindow.setPosition(userPos);
-//         infoWindow.setContent("Your current location");
-//         infoWindow.open(map);
-//       },
-//       () => handleLocationError(true, map.getCenter())
-//     );
-//   } else {
-//     handleLocationError(false, map.getCenter());
-//   }
-//   // search UI
-//   const textInput = document.getElementById("text-input");
-//   const textBtn = document.getElementById("text-input-button");
-//   const card = document.getElementById("text-input-card");
-//   map.controls[google.maps.ControlPosition.TOP_LEFT].push(card);
-//   textBtn.addEventListener("click", () => findPlaces(textInput.value));
-//   textInput.addEventListener("keydown", (e) => {
-//     if (e.key === "Enter") findPlaces(textInput.value);
-//   });
-// }
-// // ---- helpers ------------------------------------------------
-// function handleLocationError(browserHasGeolocation, pos) {
-//   infoWindow.setPosition(pos);
-//   infoWindow.setContent(
-//     browserHasGeolocation
-//       ? "Error: The Geolocation service failed."
-//       : "Error: Your browser doesn't support geolocation."
-//   );
-//   infoWindow.open(map);
-// }
-// function clearMarkers() {
-//   markers.forEach((m) => (m.map = null));
-//   markers = [];
-// }
-// // ---- search -------------------------------------------------
-// async function findPlaces(query) {
-//   if (!query) return;
-//   const { Place } = await google.maps.importLibrary("places");
-//   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-//   const { LatLngBounds } = await google.maps.importLibrary("core");
-//   clearMarkers();
-//   infoWindow.close();
-//   const request = {
-//     textQuery: query,
-//     // you were using place.id but not requesting it -> add "id"
-//     fields: ["id", "displayName", "location", "businessStatus"],
-//     // bias results to user location or current map centre
-//     locationBias: userPos || map.getCenter(),
-//     language: "en-GB",
-//     region: "GB",
-//     maxResultCount: 8,
-//     useStrictTypeFiltering: false,
-//   };
-//   // @ts-ignore
-//   const { places } = await Place.searchByText(request);
-//   if (!places || !places.length) {
-//     console.log("No results");
-//     return;
-//   }
-//   const bounds = new LatLngBounds();
-//   places.forEach((place) => {
-//     if (!place.location) return;
-//     const marker = new AdvancedMarkerElement({
-//       map,
-//       position: place.location,
-//       title: place.displayName,
-//     });
-//     markers.push(marker);
-//     marker.addListener("gmp-click", () => {
-//       map.panTo(place.location);
-//       updateInfoWindow(
-//         place.displayName,
-//         `<div>${place.displayName}</div>`,
-//         marker
-//       );
-//     });
-//     bounds.extend(place.location);
-//   });
-//   // Fit the map to the results; if only one result, zoom in a bit
-//   map.fitBounds(bounds);
-//   if (places.length === 1) {
-//     map.setZoom(Math.max(map.getZoom(), 14));
-//   }
-// }
-// // ---- infowindow ---------------------------------------------
-// function updateInfoWindow(title, html, anchor) {
-//   infoWindow.setHeaderContent(title);
-//   infoWindow.setContent(html);
-//   infoWindow.open({ map, anchor, shouldFocus: false });
-// }
-// // kick off
-// initMap();
 let map;
 let infoWindow;
 let userPos = null;
@@ -127,8 +8,7 @@ let selectedStops = []; // <-- store clicked markers
 let directionsService;
 let directionsRenderer;
 var location = [];
-let p = 0;
-
+// Creation of the map, loads the map on the page
 async function initMap() {
   await google.maps.importLibrary("maps");
   await google.maps.importLibrary("marker");
@@ -139,13 +19,16 @@ async function initMap() {
     mapId: "YOUR_REAL_MAP_ID",
     gestureHandling: "greedy",
   });
+  // Created the InfoWindow that will be used to show information about the location
   infoWindow = new google.maps.InfoWindow();
   // Directions setup
   directionsService = new google.maps.DirectionsService();
   directionsRenderer = new google.maps.DirectionsRenderer({ map });
+  // Checks to see if the user has enabled their location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
+        // Sets the user location to a variable and then puts a pin/infoWindow on the map at their current location
         userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
         map.setCenter(userPos);
         infoWindow.setPosition(userPos);
@@ -157,6 +40,7 @@ async function initMap() {
   } else {
     handleLocationError(false, map.getCenter());
   }
+  // created the search bar and the button in the top left of the map
   const textInput = document.getElementById("text-input");
   const textBtn = document.getElementById("text-input-button");
   const card = document.getElementById("text-input-card");
@@ -166,6 +50,8 @@ async function initMap() {
     if (e.key === "Enter") findPlaces(textInput.value);
   });
 }
+// Checks to see if the user has enabled their geolocation
+// If the user does not have the location enabled then the infoWindow will show an error
 function handleLocationError(browserHasGeolocation, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(
@@ -175,10 +61,12 @@ function handleLocationError(browserHasGeolocation, pos) {
   );
   infoWindow.open(map);
 }
+// Removes any markers already loaded on the map
 function clearMarkers() {
   markers.forEach((m) => (m.map = null));
   markers = [];
 }
+// Uses the input from the user to search for locations near by.
 async function findPlaces(query) {
   if (!query) return;
   const { Place } = await google.maps.importLibrary("places");
@@ -195,18 +83,20 @@ async function findPlaces(query) {
       "location",
       "businessStatus",
     ],
+    // Moved the map over the users positions and loads a maximum of 8 markers
     locationBias: userPos || map.getCenter(),
     language: "en-GB",
     region: "GB",
     maxResultCount: 8,
   };
-
+  // If the search comes up with nothing then it will log a no results error in the console.
   // @ts-ignore
   const { places } = await Place.searchByText(request);
   if (!places || !places.length) {
     console.log("No results");
     return;
   }
+  // Puts a marker on each of the locations that have been found
   const bounds = new LatLngBounds();
   places.forEach((place) => {
     if (!place.location) return;
@@ -228,14 +118,11 @@ async function findPlaces(query) {
         place
       );
       var name = "";
-      //keeps deleting the outputHTML and replaces it with multiple of the last clicked area
-      //https://stackoverflow.com/questions/71349510/how-to-display-javascript-variable-values-in-a-table
-      location[p] = place.displayName;
-      p = p + 1;
+      // Gets the Name and address of the clicked marker
       name = `${place.displayName}`;
       let street = `${place.formattedAddress}`;
-      let row = document.getElementById("locations").insertRow(-1);
-      row.insertCell(0).innerHTML = name; // use one cell for the name another for the street and last for postcode
+      let row = document.getElementById("locations").insertRow(-1); // Inserts a new row to the route planner table
+      row.insertCell(0).innerHTML = name; // use one cell for the name another for the street and postcode
       row.insertCell(1).innerHTML = street;
     });
     bounds.extend(place.location);
@@ -243,18 +130,23 @@ async function findPlaces(query) {
   map.fitBounds(bounds);
   if (places.length === 1) map.setZoom(Math.max(map.getZoom(), 14));
 }
+// Creates the infoWindow and sets information about the selected area
 function updateInfoWindow(title, html, anchor, place) {
   infoWindow.setHeaderContent(title);
   infoWindow.setContent(html);
   infoWindow.open({ map, anchor });
+  // Sets the User location to the most recently clicked marker
   userPos = place.location;
 }
+// shows the direction from one place to another
 function showDirections(destination) {
+  // checks if there is a user position and if there isn't then will put a warning in the console
   if (!userPos) {
     console.warn("No user location yet.");
     return;
   }
-  //change the userPos to the LatLng of the previously clicked location, get the duration
+  // Creates the route from the userPos to the destination
+  // The destination is the most recently clicked marker
   directionsService.route(
     {
       origin: userPos,
