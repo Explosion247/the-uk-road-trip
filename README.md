@@ -10,7 +10,7 @@ Using this list you will be able to estimate how long your trip will take, how l
 
 ## Table of Content
 
-User Experience UX
+[User Experience UX](#user-experience-ux)
 
 [Design](#design)
 
@@ -19,11 +19,9 @@ User Experience UX
 
 [Features](#features)
 
-Deployment
+[Deployment & Testing](#deployment-&-testing)
 
-Testing
-
-Technologies Used
+[Technologies Used](#technologies-used)
 
 [Credits and References](#credits-and-references)
 
@@ -77,9 +75,63 @@ Each of these components allows you to customise the map to your specific needs,
 
 Using the Bootstrap toolkit, allows the website to be responsive between different size devices, and making it easier to implement different features.
 
-## Deployment
+## Deployment & Testing
 
-The website was created using Virtual Studio Code (VSC) and its then linked to a Repository on GitHub. Within VSC there is a Commit and
+### Deployment
+
+The website was created using Virtual Studio Code (VSC) and its then linked to a Repository on GitHub. Within VSC there is a Commit and Sync feature that will allow you to upload the files to GitHub.
+
+Once the code is uploaded to GitHub, you can use GitHub pages to host the website and allow others to use it.
+
+### Testing
+
+The testing of the website is to ensure that everything is working properly and ensure that there is nothing that might cause errors / reduce the amount of errors that could appear.
+
+#### Manual Testing
+
+One of the best ways to test the website is by manually testing everything to ensure that all the buttons are working correctly, and that any features of the website are working.
+
+The Other way to test the website is by using a validator, for this we use websites like https://validator.w3.org/nu/#textarea, this allows you to input your code and then it will check to it against a set of standard to ensure they are met. The results for the HTML, CSS and JavaScript files are listed below.
+
+#### Validation Testing
+
+One of the main errors that will appear are trailing slashes, this is because due to a VSC extension, trailing slashes are automatically included.
+
+#### HTML
+
+After uploading the HTML, the only Messages that have appeared are the trailing slashes, and a missing starter tag of <lang = "en">
+
+![html-validator-fail](/assets/images/README-images/html-validator-fail.png)
+
+The errors have been fixed, however further uploads will contain trailing slashes as they are added when the file is saved
+
+![html-validator-pass](/assets/images/README-images/html-validator-pass.png)
+
+#### CSS
+
+When testing the CSS, 1 error and 2 warning have appeared.
+
+The Error is that padding has an incorrect operator, there is a comma (,) between the two values when there shouldn't be. This
+
+![css-validator-fail](/assets/images/README-images/css-validator-fail.png)
+
+![css-validator-pass](/assets/images/README-images/css-validator-pass.png)
+
+The two warning are that the import sheet will not be checked by the validator, and that the background-color and color are the same, however these are both required and will not be changed.
+
+![css-validator-warning](/assets/images/README-images/css-validator-warnings.png)
+
+#### JavaScript
+
+To test the JavaScript i have used a website this i previously created that uses the JSHint API. When you originally test the code, it will come up with alot of errors, these mainly mention items available in either esversion: 6 (ES6) or esversion: 8 (ES8).
+
+![jshint-fail-no-es8-or-8](/assets/images/README-images/jshint-fail-no-es8-or-8.png)
+
+However if you enable ES6 and ES8 then only one error will appear, This error will appear because of a line break on line 59. This can be fixed if you remove the line brake, however due to the VSC extension, it is automatically including the line brake.
+
+![jshint-fail-with-es8-and-8](/assets/images/README-images/jshint-fail-with-es8-and-8.png)
+
+![jshint-pass](/assets/images/README-images/jshint-pass.png)
 
 ## Credits and References
 
@@ -92,8 +144,8 @@ The website was created using Virtual Studio Code (VSC) and its then linked to a
 
 #### Alnwick gardens
 
-- [Choose Where - alnwick gardens](https://choosewhere.com/alnwick-garden-visitor-guide)
-- []
+- [Choose Where - Alnwick Gardens](https://choosewhere.com/alnwick-garden-visitor-guide)
+- [Wikipedia - Alnwick Gardens](https://en.wikipedia.org/wiki/Alnwick_Garden)
 
 #### Edinburgh Zoo
 
