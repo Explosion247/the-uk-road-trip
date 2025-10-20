@@ -17,7 +17,7 @@ User Experience UX
 - [Colours](#colours)
 - [Wireframe](#wireframe)
 
-Features
+[Features](#features)
 
 Deployment
 
@@ -25,7 +25,10 @@ Testing
 
 Technologies Used
 
-[Credits and References](#credits-and-references) -[images](#images) -[code](#code)
+[Credits and References](#credits-and-references)
+
+- [images](#images)
+- [code](#code)
 
 ## User Experience UX
 
@@ -55,6 +58,29 @@ The colours that i have chosen for this website are natural colours so they matc
 - click - when you find a location on the map that you have not typed in, you should be able to click on the marker and have it added to the list
 - Set start point - If the user decided not to share their location, the selected location is incorrect, or the user would like to start from a different destination, a Start Point button would allow the user to select their start point allowing the user the ability to customize their journey how they like it.
 
+## Technologies used
+
+I have used a few different processes to create the website, there are two main technologies used.
+
+### Google Maps API
+
+The Google maps api is used to connect the website to Google Maps, this has several components built within.
+
+- markers - Places a marker on top of locations selected
+- directions - Allows the user to get directions from one location to another
+- GeoLocation - Used to get the users location to start the journey from their current location
+- Search - Allows the user to search for their desired location for the next stop
+
+Each of these components allows you to customise the map to your specific needs, however some of these require smaller API's to allow them to function.
+
+### Bootstrap
+
+Using the Bootstrap toolkit, allows the website to be responsive between different size devices, and making it easier to implement different features.
+
+## Deployment
+
+The website was created using Virtual Studio Code (VSC) and its then linked to a Repository on GitHub. Within VSC there is a Commit and
+
 ## Credits and References
 
 ### images
@@ -80,5 +106,13 @@ Google Maps API
 
 - [Load the Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/load-maps-js-api?_gl=1*xgaozz*_up*MQ..*_ga*MjExNjI4MzQzNy4xNzU5MTU1Mjc4*_ga_SM8HXJ53K2*czE3NTkxNTUyNzckbzEkZzAkdDE3NTkxNTUyNzckajYwJGwwJGgw*_ga_NRWSTWS78N*czE3NTkxNTUyNzgkbzEkZzEkdDE3NTkxNTUzMTkkajE5JGwwJGgw#javascript)
 - [Geolocation: displaying User Or Device Position on Maps](https://developers.google.com/maps/documentation/javascript/examples/map-geolocation?_gl=1*mhvji6*_up*MQ..*_ga*MTEzODQxNTEzMy4xNzU5MTYyNjYz*_ga_NRWSTWS78N*czE3NTkxNjI2NjMkbzEkZzEkdDE3NTkxNjM2NTAkajUyJGwwJGgw#maps_map_geolocation-html)
+
+- [Advanced Marker Element: Places a Marker onto the Map](https://developers.google.com/maps/documentation/javascript/adding-a-google-map?_gl=1*1y9hta4*_up*MQ..*_ga*MTQ0NjQ0Mjg0Ni4xNzYwOTU4MTQ5*_ga_NRWSTWS78N*czE3NjA5NTgxNDkkbzEkZzAkdDE3NjA5NTgyODYkajU5JGwwJGgw*_ga_SM8HXJ53K2*czE3NjA5NTgxNDkkbzEkZzAkdDE3NjA5NTgxNDkkajYwJGwwJGgw)
+
+- [Routes: Creating a route from one location to another](https://developers.google.com/maps/documentation/javascript/routes/get-a-route?_gl=1*evj7ft*_up*MQ..*_ga*MTQ0NjQ0Mjg0Ni4xNzYwOTU4MTQ5*_ga_NRWSTWS78N*czE3NjA5NTgxNDkkbzEkZzEkdDE3NjA5NTg0NzMkajI5JGwwJGgw*_ga_SM8HXJ53K2*czE3NjA5NTgxNDkkbzEkZzAkdDE3NjA5NTgxNDkkajYwJGwwJGgw)
+
+- [Info Window: Created a marker above the clicked marker that includes information](https://developers.google.com/maps/documentation/javascript/infowindows?_gl=1*7ddby2*_up*MQ..*_ga*MTQ0NjQ0Mjg0Ni4xNzYwOTU4MTQ5*_ga_NRWSTWS78N*czE3NjA5NTgxNDkkbzEkZzEkdDE3NjA5NTg2MDAkajUyJGwwJGgw*_ga_SM8HXJ53K2*czE3NjA5NTgxNDkkbzEkZzAkdDE3NjA5NTgxNDkkajYwJGwwJGgw)
+
+- [Text Search: Allows the user to search for locations](https://developers.google.com/maps/documentation/javascript/place-search?_gl=1*yq9z3j*_up*MQ..*_ga*MTQ0NjQ0Mjg0Ni4xNzYwOTU4MTQ5*_ga_NRWSTWS78N*czE3NjA5NTgxNDkkbzEkZzEkdDE3NjA5NTg3MTUkajE1JGwwJGgw*_ga_SM8HXJ53K2*czE3NjA5NTgxNDkkbzEkZzAkdDE3NjA5NTgxNDkkajYwJGwwJGgw)
 
 Chat GPT has been used to help create the map with search and marker, however after that many additions have been added without Chat GPT
