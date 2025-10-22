@@ -1,4 +1,6 @@
-#the UK road trips
+# The UK road trips
+
+https://explosion247.github.io/the-uk-road-trip/
 
 ## Site Overview
 
@@ -39,6 +41,25 @@ The colours that i have chosen for this website are natural colours so they matc
 ![colour pallet](/assets/images/README-images/colour-pallet.png)
 
 ### Wireframe
+
+The Original plan for the website was to have multiple pages, the main page will have recommended destinations, and the map you can interact with, while the other pages would have information about the destination, and a map to show the location.
+
+![wireframe-main-page](/assets/images/README-images/wireframe-main-page.png)
+![wireframe-destination-page](/assets/images/README-images/wireframe-destination-page.png)
+
+After descusions i have decided to change it to one page until future updates, and use a different layout.
+The reason i removed the carousel from the top of the page is because, it would distract you and pull your eyes to the top of the page while you are trying to focus on the map, making it hard to focus and uncomfortable while using the main focus of the page.
+Reducing the number of pages makes it easier for the assessment to ensure that everything works, however in the future, more pages could be added about the recomended destinations. Adding a table allows the user to plan their road trip using the website rather than needing to wright the route down, however at the moment you will need to take a picture of the route or write it down as the possiblility of printing the planner is not implamented at the moment.
+
+The final design of the wireframe is shown below
+
+![wireframe-final-main-page](/assets/images/README-images/wireframe-final-main-page.png)
+
+### User stories
+
+As someone planning a road trip around the UK i would like to have a website that would allow me to create a route with multiple stops around the UK.
+
+As someone living in the UK, i would like to find new places in the local area that i have not been to.
 
 ## Features
 
@@ -90,6 +111,8 @@ The testing of the website is to ensure that everything is working properly and 
 #### Manual Testing
 
 One of the best ways to test the website is by manually testing everything to ensure that all the buttons are working correctly, and that any features of the website are working.
+
+The Manual testing that were carried out are listed below.
 
 The Other way to test the website is by using a validator, for this we use websites like https://validator.w3.org/nu/#textarea, this allows you to input your code and then it will check to it against a set of standard to ensure they are met. The results for the HTML, CSS and JavaScript files are listed below.
 
