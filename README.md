@@ -38,14 +38,14 @@ Using this list you will be able to estimate how long your trip will take, how l
 
 The colours that i have chosen for this website are natural colours so they match with the images that will be used, there will be images of nature like fields, animals and beaches.
 
-![colour pallet](/assets/images/README-images/colour-pallet.png)
+![colour pallet](assets/images/README-images/colour-pallet.png)
 
 ### Wireframe
 
 The Original plan for the website was to have multiple pages, the main page will have recommended destinations, and the map you can interact with, while the other pages would have information about the destination, and a map to show the location.
 
-![wireframe-main-page](/assets/images/README-images/wireframe-main-page.png)
-![wireframe-destination-page](/assets/images/README-images/wireframe-destination-page.png)
+![wireframe-main-page](assets/images/README-images/wireframe-main-page.png)
+![wireframe-destination-page](assets/images/README-images/wireframe-destination-page.png)
 
 After descusions i have decided to change it to one page until future updates, and use a different layout.
 The reason i removed the carousel from the top of the page is because, it would distract you and pull your eyes to the top of the page while you are trying to focus on the map, making it hard to focus and uncomfortable while using the main focus of the page.
@@ -53,13 +53,48 @@ Reducing the number of pages makes it easier for the assessment to ensure that e
 
 The final design of the wireframe is shown below
 
-![wireframe-final-main-page](/assets/images/README-images/wireframe-final-main-page.png)
+![wireframe-final-main-page](assets/images/README-images/wireframe-final-main-page.png)
+
+<details>
+<summary>The UK Road trip main page</summary>
+
+![The UK Road trip main page map](assets/images/README-images/main-page.png)
+
+</details>
 
 ### User stories
 
-As someone planning a road trip around the UK i would like to have a website that would allow me to create a route with multiple stops around the UK.
+As someone planning a road trip around the UK I would like to have a website that would allow me to create a route with multiple stops around the UK.
+
+<details>
+<summary>Map and Table used to plan your route example</summary>
+
+![The Map and table used to plan your route example](assets/images/README-images/example-route-and-table.png)
 
 As someone living in the UK, i would like to find new places in the local area that i have not been to.
+
+</details>
+<br>
+
+As trip planner i would like to save a list of locations to visit and revisit the list at a different point in time.
+
+<details>
+<summary>Recomended location in the north east</summary>
+
+![recomended locations](assets/images/README-images/recomended-locations.png)
+
+</details>
+<br>
+
+The ability to save the list of locations has not been implamented yet, however you would beable to easily create the list using the table and then copy it into a spread sheet to save it later.
+
+<details>
+<summary>Example table</summary>
+
+![Example table](assets/images/README-images/table.png)
+
+</details>
+<br>
 
 ## Features
 
@@ -114,6 +149,8 @@ One of the best ways to test the website is by manually testing everything to en
 
 The Manual testing that were carried out are listed below.
 
+![manual-testing-table](assets/images/README-images/manual-testing-table.png)
+
 The Other way to test the website is by using a validator, for this we use websites like https://validator.w3.org/nu/#textarea, this allows you to input your code and then it will check to it against a set of standard to ensure they are met. The results for the HTML, CSS and JavaScript files are listed below.
 
 #### Validation Testing
@@ -124,11 +161,11 @@ One of the main errors that will appear are trailing slashes, this is because du
 
 After uploading the HTML, the only Messages that have appeared are the trailing slashes, and a missing starter tag of <lang = "en">
 
-![html-validator-fail](/assets/images/README-images/html-validator-fail.png)
+![html-validator-fail](assets/images/README-images/html-validator-fail.png)
 
 The errors have been fixed, however further uploads will contain trailing slashes as they are added when the file is saved
 
-![html-validator-pass](/assets/images/README-images/html-validator-pass.png)
+![html-validator-pass](assets/images/README-images/html-validator-pass.png)
 
 #### CSS
 
@@ -136,25 +173,41 @@ When testing the CSS, 1 error and 2 warning have appeared.
 
 The Error is that padding has an incorrect operator, there is a comma (,) between the two values when there shouldn't be. This
 
-![css-validator-fail](/assets/images/README-images/css-validator-fail.png)
+![css-validator-fail](assets/images/README-images/css-validator-fail.png)
 
-![css-validator-pass](/assets/images/README-images/css-validator-pass.png)
+![css-validator-pass](assets/images/README-images/css-validator-pass.png)
 
 The two warning are that the import sheet will not be checked by the validator, and that the background-color and color are the same, however these are both required and will not be changed.
 
-![css-validator-warning](/assets/images/README-images/css-validator-warnings.png)
+![css-validator-warning](assets/images/README-images/css-validator-warnings.png)
 
 #### JavaScript
 
 To test the JavaScript i have used a website this i previously created that uses the JSHint API. When you originally test the code, it will come up with alot of errors, these mainly mention items available in either esversion: 6 (ES6) or esversion: 8 (ES8).
 
-![jshint-fail-no-es8-or-8](/assets/images/README-images/jshint-fail-no-es8-or-8.png)
+![jshint-fail-no-es8-or-8](assets/images/README-images/jshint-fail-no-es8-or-8.png)
 
 However if you enable ES6 and ES8 then only one error will appear, This error will appear because of a line break on line 59. This can be fixed if you remove the line brake, however due to the VSC extension, it is automatically including the line brake.
 
-![jshint-fail-with-es8-and-8](/assets/images/README-images/jshint-fail-with-es8-and-8.png)
+![jshint-fail-with-es8-and-8](assets/images/README-images/jshint-fail-with-es8-and-8.png)
 
-![jshint-pass](/assets/images/README-images/jshint-pass.png)
+![jshint-pass](assets/images/README-images/jshint-pass.png)
+
+### Lighthouse Testing
+
+The Lighthouse testing is used to test several things while the website is loaded. The performance is tested to ensure that everything will load fast and smoothly, Accessibility is tested to see how easy it is for the user, and the best practices are tested to help you optimise the website. A good score for each section is 90 and above.
+
+The Performance rating recived a below par rating of 73, this is mainly because of the images and google API. The images can be improved by reducing the file size and using a different image format, while the API uses image files that are larger than required and at the moment cannot be changes. The Images and API could also be improved by increasing the cache lifetime of the images to ensure help with repeat visits to the site.
+
+![performance-lighthouse](assets/images/README-images/performance-lighthouse.png)
+
+The Accessibility rating received a rating of 97, the only thing that was recomended to improve was the role variable within the geolocation error pin. This will only affect those using screen readers as they might not be able to tell what the element is used for.
+
+![accessibility-lighthouse](assets/images/README-images/accessibility-lighthouse.png)
+
+The Best practices have received a score of 89, this is below the recomended. To improve the score it is recomended to add a button to enable geolocation as people do not trust websites that require your location without a reason. A button will be included in a future update to enable the geolocation for those who dont trust geolocation.
+
+![best-practices-lighthouse](assets/images/README-images/best-practices-lighthouse.png)
 
 ## Credits and References
 
