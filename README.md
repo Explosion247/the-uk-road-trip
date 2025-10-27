@@ -135,9 +135,11 @@ Using the Bootstrap toolkit, allows the website to be responsive between differe
 
 ### Deployment
 
-The website was created using Virtual Studio Code (VSC) and its then linked to a Repository on GitHub. Within VSC there is a Commit and Sync feature that will allow you to upload the files to GitHub.
+To begin the creation of the website, I created the basic files on Virtual Studio Code (VSC) and used a feature of VSC that allows you to automatically create a repository on GitHub using the files just created. This allowed me to upload the filed onto GitHub by using the commit and sync features built into VSC. After completing a section of the code, whether it was creating the map or adding more information to the recomendations, I would commit the changes to create a save point incase anything went wrong. Once there was a commit, I would sync the folder and upload the most recent files onto the GitHub repository. While creating this project I would commit and sync the files a multitude of times to ensure there were saves to go back through incase of a problem.
 
-Once the code is uploaded to GitHub, you can use GitHub pages to host the website and allow others to use it.
+Creating the repository on GitHub, allows me to have a remote save of the project incase of an emergency and this repository also allows you to access a feature called GitHub pages. GitHub pages feature that hosts the website for you, allowing other people to use the website. When you set up GitHub pages you can select what branch you would like to use, if you choose a branch then a previous commit will be used to host the website and any updates you make on the main branch wont affect it untill you edit the branch, however your main commits and sync will be deployed into your main branch. This main branch is the source of my deployment to allow any further syncs be deployed as soon as they are uploaded.
+
+This deployment are where the majority of the testing needs to take place as this is where others will be using the website. If others are using the website while you are making changes, two deployments could be necessary to ensure that the website works correctly before others are using it.
 
 ### Testing
 
