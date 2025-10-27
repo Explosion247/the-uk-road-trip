@@ -8,7 +8,9 @@ let selectedStops = []; // <-- store clicked markers
 let directionsService;
 let directionsRenderer;
 var location = [];
-// Creation of the map, loads the map on the page
+/**
+ * Creates and loads the map, sets the user position and creates a search bar and button
+ */
 async function initMap() {
   await google.maps.importLibrary("maps");
   await google.maps.importLibrary("marker");
@@ -50,23 +52,29 @@ async function initMap() {
     if (e.key === "Enter") findPlaces(textInput.value);
   });
 }
-// Checks to see if the user has enabled their geolocation
-// If the user does not have the location enabled then the infoWindow will show an error
+/**
+ * Checks to see if the user has enabled their geolocation,
+ * If the user does not have the location enabled then the infoWindow will show an error
+ */
 function handleLocationError(browserHasGeolocation, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(
     browserHasGeolocation
-      ? "Error: The Geolocation service failed."
+      ? "Please Enable your location"
       : "Error: Your browser doesn't support geolocation."
   );
   infoWindow.open(map);
 }
-// Removes any markers already loaded on the map
+/**
+ * Removes any markers already loaded on the map
+ */
 function clearMarkers() {
   markers.forEach((m) => (m.map = null));
   markers = [];
 }
-// Uses the input from the user to search for locations near by.
+/**
+ * Uses the input from the user to search for locations near by and adds it to the table
+ */
 async function findPlaces(query) {
   if (!query) return;
   const { Place } = await google.maps.importLibrary("places");
@@ -89,11 +97,8 @@ async function findPlaces(query) {
     region: "GB",
     maxResultCount: 8,
   };
-  // If the search comes up with nothing then it will log a no results error in the console.
-  // @ts-ignore
   const { places } = await Place.searchByText(request);
   if (!places || !places.length) {
-    console.log("No results");
     return;
   }
   // Puts a marker on each of the locations that have been found
@@ -110,7 +115,6 @@ async function findPlaces(query) {
     marker.addListener("gmp-click", () => {
       selectedStops.push(place); // save it
       showDirections(place.location); // draw route
-      console.log(`display Name = ${place.displayName}`);
       updateInfoWindow(
         place.displayName,
         `<div>Added ${place.displayName} to your trip!</div>`,
@@ -130,7 +134,9 @@ async function findPlaces(query) {
   map.fitBounds(bounds);
   if (places.length === 1) map.setZoom(Math.max(map.getZoom(), 14));
 }
-// Creates the infoWindow and sets information about the selected area
+/**
+ * Creates the infoWindow and sets information about the selected area
+ */
 function updateInfoWindow(title, html, anchor, place) {
   infoWindow.setHeaderContent(title);
   infoWindow.setContent(html);
@@ -138,11 +144,12 @@ function updateInfoWindow(title, html, anchor, place) {
   // Sets the User location to the most recently clicked marker
   userPos = place.location;
 }
-// shows the direction from one place to another
+/**
+ * shows the direction from one place to another
+ */
 function showDirections(destination) {
-  // checks if there is a user position and if there isn't then will put a warning in the console
+  // checks if there is a user position
   if (!userPos) {
-    console.warn("No user location yet.");
     return;
   }
   // Creates the route from the userPos to the destination
@@ -157,9 +164,7 @@ function showDirections(destination) {
       if (status === "OK") {
         directionsRenderer.setDirections(result);
       } else {
-        console.error("Directions request failed:", status);
       }
-      console.log(result.duration_in_traffic);
     }
   );
 }
